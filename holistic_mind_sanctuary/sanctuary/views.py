@@ -4,4 +4,10 @@ from django.shortcuts import render
 from .models import Zone, Service, Event, Post
 
 
-# Add more views as needed
+def home(request):
+    return render(request, 'home.html')
+
+
+
+
+
