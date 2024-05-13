@@ -17,5 +17,9 @@ def services(request):
     return render(request, 'services.html', {'services': services})
 
 
+def events(request):
+    events = Event.objects.all()
+    return render(request, 'events.html', {'events': events})
+
 
 
