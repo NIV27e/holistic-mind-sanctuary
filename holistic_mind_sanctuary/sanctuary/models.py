@@ -9,6 +9,7 @@ class Zone(models.Model):
 
 
 class Service(models.Model):
+    objects = None
     zone = models.ForeignKey(Zone, related_name='services', on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     description = models.TextField()
