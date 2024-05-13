@@ -22,4 +22,8 @@ def events(request):
     return render(request, 'events.html', {'events': events})
 
 
+def blog(request):
+    posts = Post.objects.all()
+    return render(request, 'blog.html', {'posts': posts})
+
 
