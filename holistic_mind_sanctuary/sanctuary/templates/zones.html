@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1 class="my-4">Zones within Our Sanctuary</h1>
+    <div class="row">
+        {% for key, zone in zones.items %}
+        <div class="col-md-4 my-3">
+            <div class="card">
+                <img src="{% static zone.image %}" class="card-img-top" alt="{{ zone.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ zone.title }}</h5>
+                    <p class="card-text">{{ zone.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

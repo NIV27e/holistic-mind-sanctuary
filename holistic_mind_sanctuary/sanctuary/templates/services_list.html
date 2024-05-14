@@ -1,10 +1,30 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-<h2>Our Services</h2>
-<ul>
-    {% for service in services %}
-    <li>{{ service.name }} - {{ service.description }}</li>
-    {% endfor %}
-</ul>
+<div class="services-section">
+    <h1>Our Services</h1>
+    <p>At Holistic Mind Sanctuary, we offer a variety of services to enhance your physical, mental, and spiritual well-being. Explore our offerings below:</p>
+
+    <div class="service">
+        <img src="{% static 'images/herbal_medicine.jpg' %}" alt="Herbal Medicine" class="img-fluid">
+        <h2>Herbal Medicine</h2>
+        <p>Utilizing natural plant extracts and herbs to treat and prevent ailments.</p>
+    </div>
+
+    <div class="service">
+        <img src="{% static 'images/bee_therapy.jpg' %}" alt="Bee Therapy" class="img-fluid">
+        <h2>Bee Therapy</h2>
+        <p>Exploring the benefits of bee products in healing and disease prevention.</p>
+    </div>
+
+    <div class="service">
+        <img src="{% static 'images/yoga_sessions.jpg' %}" alt="Yoga Sessions" class="img-fluid">
+        <h2>Yoga Sessions</h2>
+        <p>Join our expert-led yoga sessions to improve flexibility, strength, and mental clarity.</p>
+    </div>
+
+    <!-- Additional services can be added in similar blocks -->
+</div>
 {% endblock %}

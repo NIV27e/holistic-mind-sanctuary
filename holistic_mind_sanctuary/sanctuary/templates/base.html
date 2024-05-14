@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0">
+    <meta name="description" content="Holistic Mind Sanctuary - Integrating holistic health services in Glasgow Green for mental, physical, and spiritual well-being.">
+    <meta name="keywords" content="holistic health, Glasgow Green, wellness center, natural healing">
     <title>Holistic Mind Sanctuary</title>
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preload" href="{% static 'css/style.css' %}" as="style">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" as="style">
 </head>
 <body>
     <header>
@@ -22,10 +29,13 @@
                         <a class="nav-link" href="{% url 'about_us' %}">About Us</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'zones' %}">Zones</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'services_list' %}">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                        <a class="nav-link" href="{% url 'contact' %}" aria-label="Contact Us">Contact</a>
                     </li>
                 </ul>
             </div>

@@ -1,10 +1,25 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-<h2>Contact Us</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<div class="contact-section">
+    <h1>Contact Us</h1>
+    <p>Have questions or want to get in touch? Please fill out the form below, and our team will get back to you as soon as possible.</p>
+
+    <div class="contact-details">
+        <h3>Our Office</h3>
+        <p><strong>Address:</strong> 123 Healing Way, Glasgow Green, Glasgow, G40 1AA</p>
+        <p><strong>Phone:</strong> +44 1234 567890</p>
+        <p><strong>Email:</strong> info@holisticmindsanctuary.org</p>
+    </div>
+
+    <div class="contact-form">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
 {% endblock %}

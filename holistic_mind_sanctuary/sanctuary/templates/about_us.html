@@ -1,7 +1,36 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-<h2>About Us</h2>
-<p>This sanctuary is founded on the principles of holistic health, combining traditional and modern therapies.</p>
-<!-- More detailed background, vision, and mission statements -->
+<div class="about-section">
+    <h1>About Holistic Mind Sanctuary</h1>
+    <img src="{% static 'images/about_us.jpg' %}" alt="Holistic Sanctuary" class="img-fluid">
+    <p>
+        Holistic Mind Sanctuary is a pioneering wellness center located in the heart of Glasgow Green. Our mission is to integrate holistic health services within an urban park setting, focusing on mental, physical, and spiritual well-being. We are committed to combining traditional and modern healing practices to provide comprehensive wellness care to our community.
+    </p>
+    <p>
+        Founded by a team of experienced health practitioners and community advocates, Holistic Mind Sanctuary aims to foster a balanced lifestyle and promote sustainable health practices. Our facilities are designed with the principles of environmental sustainability, featuring green roofs, natural building materials, and spaces that harmonize with nature.
+    </p>
+    <h2>Our Values</h2>
+    <ul>
+        <li><strong>Community:</strong> Building strong, supportive relationships within our community.</li>
+        <li><strong>Sustainability:</strong> Promoting practices that preserve and enhance environmental health.</li>
+        <li><strong>Well-being:</strong> Focusing on holistic approaches to health and wellness.</li>
+    </ul>
+    <h2>Meet Our Team</h2>
+    <div class="team">
+        <div class="team-member">
+            <img src="{% static 'images/team_member1.jpg' %}" alt="Founder Name" class="img-fluid">
+            <h3>Namitha Shree</h3>
+            <p>Founder &amp; Lead Architect</p>
+        </div>
+        <div class="team-member">
+            <img src="{% static 'images/team_member2.jpg' %}" alt="Therapist Name" class="img-fluid">
+            <h3>Niv Nair</h3>
+            <p>Senior Therapist</p>
+        </div>
+        <!-- More team members can be added similarly -->
+    </div>
+</div>
 {% endblock %}
