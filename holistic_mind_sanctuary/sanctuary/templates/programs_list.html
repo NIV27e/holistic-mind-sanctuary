@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Educational Programs</h2>
+<ul>
+    {% for program in programs %}
+    <li>{{ program.title }}: {{ program.description }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
