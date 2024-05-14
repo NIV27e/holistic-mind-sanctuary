@@ -1,5 +1,5 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from .forms import ContactForm
 from django.shortcuts import render
 from .models import Zone, Service, Event, Post
 
@@ -27,3 +27,12 @@ def blog(request):
     return render(request, 'blog.html', {'posts': posts})
 
 
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Process the data, e.g., send an email
+            return redirect('home')
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
