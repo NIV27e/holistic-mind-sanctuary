@@ -1,16 +1,13 @@
-<!-- base.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holistic Mind Sanctuary</title>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <header>
-        <!-- Navigation bar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="{% url 'home' %}">Holistic Mind Sanctuary</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,20 +31,15 @@
             </div>
         </nav>
     </header>
-
     <main class="container py-4">
         {% block content %}
-        <!-- Content overridden in each child template -->
         {% endblock %}
     </main>
-
     <footer class="bg-light py-4 text-center">
         <div class="container">
-            <p>&copy; {{ current_year }} Holistic Mind Sanctuary. All rights reserved.</p>
+            <p>&copy; {% now "Y" %} Holistic Mind Sanctuary. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Bootstrap JS with Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

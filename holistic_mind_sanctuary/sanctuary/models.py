@@ -5,12 +5,18 @@ class Zone(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
 
+    def __str__(self):
+        return self.name
+
 
 class Service(models.Model):
-    objects = None
     zone = models.ForeignKey(Zone, related_name='services', on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=200)
     description = models.TextField()
+    image = models.ImageField(upload_to='services/', blank=True, null=True)  # Optional image field
+
+    def __str__(self):
+        return self.name
 
 
 class Event(models.Model):
@@ -18,20 +24,17 @@ class Event(models.Model):
     date = models.DateTimeField()
     description = models.TextField()
 
+    def __str__(self):
+        return self.title
+
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(auto_now_add=True)
 
-
-class Service(models.Model):
-    name = models.CharField(max_length=200)
-    description = models.TextField()
-    image = models.ImageField(upload_to='services/')
-
     def __str__(self):
-        return self.name
+        return self.title
 
 
 class BlogPost(models.Model):

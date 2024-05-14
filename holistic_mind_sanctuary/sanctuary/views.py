@@ -1,7 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ContactForm
-from django.shortcuts import render
-from .models import Zone, Service, Event, Post, BlogPost, EducationalProgram
+from .models import Service, Event, Post, BlogPost, EducationalProgram
 
 
 def home(request):
@@ -40,14 +39,14 @@ def contact(request):
 
 def services_list(request):
     services = Service.objects.all()
-    return render(request, 'sanctuary/services_list.html', {'services': services})
+    return render(request, 'services_list.html', {'services': services})
 
 
 def blog_post_detail(request, pk):
-    post = BlogPost.objects.get(pk=pk)
-    return render(request, 'sanctuary/blog_post_detail.html', {'post': post})
+    post = get_object_or_404(BlogPost, pk=pk)
+    return render(request, 'blog_post_detail.html', {'post': post})
 
 
 def programs_list(request):
     programs = EducationalProgram.objects.all()
-    return render(request, 'sanctuary/programs_list.html', {'programs': programs})
+    return render(request, 'programs_list.html', {'programs': programs})
